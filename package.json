@@ -1,0 +1,31 @@
+{
+  "name": "pair-project-company",
+  "version": "1.0.0",
+  "description": "This project dedicated to make for the start-up company, which consist from 5 to 15 people at most. It will handle data from user, manager, and ceo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drfrostongithub/pair-project-company.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drfrostongithub/pair-project-company/issues"
+  },
+  "homepage": "https://github.com/drfrostongithub/pair-project-company#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0"
+  }
+}
