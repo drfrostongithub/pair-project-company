@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<%- include('./partial/header.ejs') %>
+<body style="margin: 0px;background-color: lightgrey;">
+    <section style="background-image: url(./img/29730010-line-seamless-pattern-can-be-used-for-website-background-and-greating-cards-or-cover-decoration.jpg);height: 1000px;">
+        <h1 style="position: relative;left: 100px;font-style: oblique;font-size: 30px;">List Profile</h1>
+        <br>
+        <a href="/profiles/add" style="font-size: 20px;color: rgb(1, 37, 39);margin-left: 1000px;">Profile</a>
+        <table border="1" style="left: 100px;">
+            <tr>
+                <th>Full Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Start Join</th>
+                <th>Project</th>
+                <th>Client</th>
+                <th>Estimate Project</th>
+            </tr>
+            <% data.forEach((el) => { %>
+                <tr>
+                    <td><%= el.fullName %></td>
+                    <td><%= el.position %></td>
+                    <td><%= el.salary %></td>
+                    <td><%= el.startJoin %></td>
+                    <td><%= el.project %></td>
+                    <td><%= el.klien %></td>
+                    <td><%= el.estimasiProject %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </section>
+</body>
+</html>

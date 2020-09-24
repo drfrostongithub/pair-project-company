@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<%- include('./partial/header.ejs') %>
+<body style="margin: 0px;background-color: lightgrey;">
+    <section style="background-image: url(./img/29730010-line-seamless-pattern-can-be-used-for-website-background-and-greating-cards-or-cover-decoration.jpg);height: 1000px;">
+        <h1 style="position: relative;left: 100px;font-style: oblique;font-size: 30px;">List Users</h1>
+        <br>
+        <table border="1" style="left: 100px;">
+            <tr>
+                <th>Username</th>
+                <th>Is Admin</th>
+                <th>Is CEO</th>
+            </tr>
+            <% data.forEach((el) => { %>
+                <tr>
+                    <td><%= el.username %></td>
+                    <td><%= el.isAdmin %></td>
+                    <td><%= el.isCeo %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </section>
+</body>
+</html>
