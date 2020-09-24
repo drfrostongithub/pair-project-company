@@ -27,12 +27,17 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   //hooks bcyrptjs
-  
+
   User.beforeCreate(instance => {
+    console.log(instance)
     let salt = bcryptjs.genSaltSync(10)
-    let hash = bcryptjs(instance.password, salt)
+    let hash = bcryptjs.hashSync(instance.password, salt)
 
     instance.password = hash
+
+    instance.isAdmin = false,
+    instance.isCeo = false
+    
   })
   return User;
 };
