@@ -5,5 +5,19 @@
     "database": "pair_project_company",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "putra",
+    "database": "pair_project_company",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "ltvpyigexoqzjh",
+    "password": "d0a38b31cb63c5615830ba9f89c8b9963f3e0fe13dbc281ac60885efc7cc503d",
+    "database": "d1a6r82o3r78la",
+    "host": "ec2-52-87-22-151.compute-1.amazonaws.com",
+    "dialect": "postgres"
   }
 }
