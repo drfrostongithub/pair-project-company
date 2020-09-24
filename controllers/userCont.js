@@ -15,8 +15,10 @@ class UserController {
         })
         // console.log(req.body)
         .then(data=>{
-            
-            if(!data){
+            if(req.session.isLogin){
+                throw "someone still login !"
+            }
+            else if(!data){
                 throw "username or password wrong"
             }else{
                 req.session.isLogin = true
@@ -27,7 +29,7 @@ class UserController {
                 if (data.isCeo == true){
                     req.session.isCeo = true
                 }
-                res.redirect(`/profiles`)
+                res.redirect(`/users/view`)
             }
         })
         .catch(err=>{
