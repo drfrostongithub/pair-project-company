@@ -28,12 +28,12 @@
                 <tr>
                     <td><%= el.fullName %></td>
                     <td><%= el.position %></td>
-                    <td><%= formatNumber(el.salary) %></td>
+                    <td><%= formNumber(el.salary) %></td>
                     <td><%= el.startJoin %></td>
                     <td><%= el.project %></td>
                     <td><%= el.klien %></td>
                     <td><%= el.estimasiProject %></td>
-                    <td><a href="/profiles/<%= data.id %>/edit">Edit</a></td>
+                    <td><a href="/profiles/<%= el.id %>/edit">Edit</a></td>
                 </tr>
             <% }) %>
         </table>

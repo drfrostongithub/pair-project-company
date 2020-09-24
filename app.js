@@ -15,9 +15,9 @@ app.use(logger)
 app.use(session({
     secret: "pairprojectphase1",
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
-      maxAge: 60000
+      maxAge: 120000
     }
   }))
 

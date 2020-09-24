@@ -1,4 +1,4 @@
-const { Profile,User } = require ('../models/index.js')
+const { Profile,User,UserProfile } = require ('../models/index.js')
 const formNumber = require ('../helper/formatNumber')
 
 class ProfileController {
@@ -18,7 +18,16 @@ class ProfileController {
     }
 
     static postAddProfile(req,res){
-        let dataBody = req.body
+        console.log(req.body)
+        let dataBody = {
+            fullName : req.body.fullName,
+            position : req.body.position,
+            salary : req.body.salary,
+            startJoin : req.body.startJoin,
+            project : req.body.project,
+            klien : req.body.klien,
+            estimasiProject : req.body.estimasiProject
+        }
         Profile.create (dataBody)
         .then (data => {
             res.redirect ('/profiles')
@@ -40,7 +49,15 @@ class ProfileController {
     }
 
     static postEditProfile(req,res){
-        let dataBody = req.body
+        let dataBody = {
+            fullName : req.body.fullName,
+            position : req.boy.position,
+            salary : req.body.salary,
+            startJoin : req.body.startJoin,
+            project : req.body.project,
+            klien : req.body.klien,
+            estimasiProject : req.body.estimasiProject
+        }
         Profile.update (dataBody,{
             where : {
                 id: +req.params.id
@@ -55,8 +72,8 @@ class ProfileController {
     }
 
     static myProfile(req,res){
-        User.findByPk (+req.params.id,{
-            include: Profile
+        UserProfile.findByPk (+req.params.id,{
+            include: [Profile, User]
         })
         .then (data => {
             res.render ('myprofile',{data})
@@ -64,6 +81,14 @@ class ProfileController {
         .catch (err => {
             res.send (err)
         })
+    }
+
+    static getAssign(req,res){
+        res.render(`assign`)
+    }
+
+    static postAsign(req,res){
+
     }
 }
 

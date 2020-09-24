@@ -11,6 +11,7 @@ routers.post('/add' , ProfileController.postAddProfile)
 routers.get('/:id/edit' , ProfileController.getEditProfile)
 routers.post('/:id/edit' , ProfileController.postEditProfile)
 routers.get('/:id/myprofile' , ProfileController.myProfile)
+routers.get('/:id/assign' , ProfileController.getAssign)
 
 
 module.exports = routers
