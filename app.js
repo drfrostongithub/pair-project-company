@@ -4,7 +4,7 @@ const logger = require(`./middlewares/logger`)
 const app = express();
 const routes = require('./routers/index.js');
 
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 app.set ("view engine", "ejs");
 
@@ -24,6 +24,6 @@ app.use(session({
 app.use ('/', routes);
 
 
-app.listen(PORT, ()=>{
-    console.log(`application is running at http://localhost:${PORT}`);
+app.listen(port, ()=>{
+    console.log(`application is running at http://localhost:${port}`);
 }) 
