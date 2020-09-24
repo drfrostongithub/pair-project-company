@@ -45,6 +45,15 @@ class UserController {
         })
     }
     
+    static viewUser( req,res){
+        User.findAll()
+        .then ((data)=>{
+            res.render(`users`,{data})
+        })
+        .catch(err=>{
+            res.send(err)
+        })
+    }
 }
 
 module.exports = UserController

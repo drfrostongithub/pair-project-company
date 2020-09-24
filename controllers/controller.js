@@ -1,6 +1,6 @@
 class Controller {
     static homeLander (req,res){
-        res.send(`HomeLander!`)
+        res.render(`home and login`,{title : `Home Landing`})
     }
 }
 
