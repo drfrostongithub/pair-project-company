@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>My Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <%- include('./partial/header.ejs') %>
 <body style="margin: 0px;background-color: lightgrey;">
     <section style="background-image: url(./img/29730010-line-seamless-pattern-can-be-used-for-website-background-and-greating-cards-or-cover-decoration.jpg);height: 1000px;">
-        <h1 style="position: relative;margin-left: 100px;font-style: oblique;font-size: 30px;">List Users</h1>
+        <h1 style="position: relative;left: 100px;font-style: oblique;font-size: 30px;">List Profile</h1>
         <br>
-        <table border="1" style="margin-left: 100px;">
+        <h1 style="font-size: 50px;"><%= data.name %></h1>
+        <br>
+        <table border="1" style="margin-left: 100px;width: 300px;">
             <tr>
-                <th>Username</th>
-                <th>Is Admin</th>
-                <th>Is CEO</th>
+                <th>My Profile</th>
             </tr>
-            <% data.forEach((el) => { %>
-                <tr>
-                    <td><%= el.username %></td>
-                    <td><%= el.isAdmin %></td>
-                    <td><%= el.isCeo %></td>
-                </tr>
-            <% }) %>
+            <tr>
+                <td><%= data.Profile %></td>
+            </tr>
         </table>
     </section>
 </body>

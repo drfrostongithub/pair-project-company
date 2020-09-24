@@ -10,7 +10,7 @@ routers.get('/add' , ProfileController.getAddProfile)
 routers.post('/add' , ProfileController.postAddProfile)
 routers.get('/:id/edit' , ProfileController.getEditProfile)
 routers.post('/:id/edit' , ProfileController.postEditProfile)
-routers.get('/myprofile' , ProfileController.myProfile)
+routers.get('/:id/myprofile' , ProfileController.myProfile)
 
 
 module.exports = routers
