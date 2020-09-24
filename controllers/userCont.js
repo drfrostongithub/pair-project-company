@@ -56,6 +56,14 @@ class UserController {
             res.send(err)
         })
     }
+
+    static getAddUser(req,res){
+        res.render(`addUser`)
+    }
+
+    static postAddUser(req,res){
+
+    }
 }
 
 module.exports = UserController

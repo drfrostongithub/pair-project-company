@@ -1,30 +1,69 @@
+const { Profile,User } = require ('../models/index.js')
+const formNumber = require ('../helper/formatNumber')
+
 class ProfileController {
 
     static listProfile(req,res){
-        res.send(`listProfile`)
+        Profile.findAll ()
+        .then (data => {
+            res.render ('profile',{data,formNumber})
+        })
+        .catch (err => {
+            res.send (err)
+        })
     }
 
     static getAddProfile(req,res){
-        res.send(`getAddProfile`)
+        res.render(`add-profile`)
     }
 
     static postAddProfile(req,res){
-        res.send(`postAddProfile`)
+        let dataBody = req.body
+        Profile.create (dataBody)
+        .then (data => {
+            res.redirect ('/profiles')
+        })
+        .catch (err => {
+            res.send (err)
+        })
         
     }
 
     static getEditProfile(req,res){
-        res.send(`getEditProfile`)
-        
+        Profile.findByPk (+req.params.id)
+        .then (data => {
+            res.render(`edit-profile`,{data})
+        })
+        .catch (err => {
+            res.send (err)
+        })
     }
 
     static postEditProfile(req,res){
-        res.send(`postEditProfile`)
-        
+        let dataBody = req.body
+        Profile.update (dataBody,{
+            where : {
+                id: +req.params.id
+            }
+        })
+        .then (data => {
+            res.redirect ('/profiles')
+        })
+        .catch (err => {
+            res.send (err)
+        })
     }
 
     static myProfile(req,res){
-        res.send(`myprofile`)
+        User.findByPk (+req.params.id,{
+            include: Profile
+        })
+        .then (data => {
+            res.render ('myprofile',{data})
+        })
+        .catch (err => {
+            res.send (err)
+        })
     }
 }
 

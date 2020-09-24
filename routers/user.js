@@ -5,8 +5,10 @@ const authenticate = require(`../middlewares/authenticate`)
 
 routers.get('/' , UserController.getLogin)
 routers.post('/' , UserController.postLogin)
+routers.get('/add' , UserController.getAddUser)
+routers.post('/add' , UserController.postAddUser)
 routers.get(`/view`,authenticate,UserController.viewUser)
-routers.get('/logout' , UserController.logout)
+
 
 
 module.exports = routers
