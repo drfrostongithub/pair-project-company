@@ -1,28 +1,30 @@
 class ProfileController {
 
-    static listProfile(req,req){
-
-
+    static listProfile(req,res){
+        res.send(`listProfile`)
     }
 
-    static listProfile(req,req){
+    static getAddProfile(req,res){
+        res.send(`getAddProfile`)
+    }
 
+    static postAddProfile(req,res){
+        res.send(`postAddProfile`)
         
     }
 
-    static listProfile(req,req){
-
+    static getEditProfile(req,res){
+        res.send(`getEditProfile`)
         
     }
 
-    static listProfile(req,req){
-
+    static postEditProfile(req,res){
+        res.send(`postEditProfile`)
         
     }
 
-    static listProfile(req,req){
-
-        
+    static myProfile(req,res){
+        res.send(`myprofile`)
     }
 }
 

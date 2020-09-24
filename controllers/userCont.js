@@ -1,6 +1,7 @@
 class UserController {
     static getLogin(req, res) {
-        res.render(`home`, { title: `Halaman Utama` })
+        res.send(`home and login`)
+        // res.render(`home`, { title: `Halaman Utama` })
     }
 
 
