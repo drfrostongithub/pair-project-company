@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<%- include('./partial/header.ejs') %>
+
+<body style="margin: 0px;background-color: lightgrey;">
+    <section
+        style="background-image: url(./img/29730010-line-seamless-pattern-can-be-used-for-website-background-and-greating-cards-or-cover-decoration.jpg);height: 1000px;">
+        <h1 style="position: relative;left: 100px;font-style: oblique;font-size: 30px;">Assign</h1>
+        <br>
+        <form method="POST" action="/profiles/<%= dataProfile.id%>/assign" style="left: 100px;position: relative;border: 2px rgb(8, 8, 8);">
+            User :
+            <select name="UserId" id="UserId">
+            <% dataUser.forEach((el)=>{ %>
+                <option value="<%= el.id %>"><%= el.username %></option>
+            <% }) %>
+        </select> <br>
+            Status : <br><input type="text" name="status" value=""><br></br>
+            <br>
+
+
+            <input type="submit" name="submit">
+        </form>
+    </section>
+</body>
+
+</html>

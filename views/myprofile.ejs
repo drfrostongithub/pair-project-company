@@ -11,14 +11,22 @@
     <section style="background-image: url(./img/29730010-line-seamless-pattern-can-be-used-for-website-background-and-greating-cards-or-cover-decoration.jpg);height: 1000px;">
         <h1 style="position: relative;left: 100px;font-style: oblique;font-size: 30px;">List Profile</h1>
         <br>
-        <h1 style="font-size: 50px;"><%= data.name %></h1>
+        <h1 style="font-size: 50px;"><%= data.id %></h1>
         <br>
         <table border="1" style="margin-left: 100px;width: 300px;">
             <tr>
                 <th>My Profile</th>
             </tr>
-            <tr>
-                <td><%= data.Profile %></td>
+            <tr> 
+            <% data.forEach((el)=>{ %>
+                <td><%= el.Profile.fullName %></td>
+                <td><%= el.Profile.position %></td>
+                <td> Rp.<%= formNumber(el.Profile.salary) %></td>
+                <td><%= el.Profile.startJoin %></td>
+                <td><%= el.Profile.project %></td>
+                <td><%= el.Profile.klien %></td>
+                <td><%= el.Profile.estimasiProject %></td>
+            <% }) %>
             </tr>
         </table>
     </section>

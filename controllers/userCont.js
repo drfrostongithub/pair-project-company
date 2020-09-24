@@ -24,7 +24,7 @@ class UserController {
                 if (bcryptjs.compareSync(req.body.password, data.password)) {
                     req.session.isLogin = true
                     req.session.username = data.username
-                    res.redirect(`/`)
+                    res.redirect(`/profiles/${data.id}/myprofile`)
                 } else {
                     req.session.isLogin = true
                     req.session.username = data.username
@@ -34,7 +34,7 @@ class UserController {
                     if (data.isCeo == true) {
                         req.session.isCeo = true
                     }
-                    res.redirect(`/users/view`)
+                    res.redirect(`/profiles/${data.id}/myprofile`)
                 }
            
 

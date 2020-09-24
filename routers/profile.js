@@ -12,6 +12,6 @@ routers.get('/:id/edit' , ProfileController.getEditProfile)
 routers.post('/:id/edit' , ProfileController.postEditProfile)
 routers.get('/:id/myprofile' , ProfileController.myProfile)
 routers.get('/:id/assign' , ProfileController.getAssign)
-
+routers.post('/:id/assign' , ProfileController.postAsign)
 
 module.exports = routers

@@ -72,11 +72,12 @@ class ProfileController {
     }
 
     static myProfile(req,res){
-        UserProfile.findByPk (+req.params.id,{
-            include: [Profile, User]
-        })
+        UserProfile.findAll ({where : {id : +req.params.id},
+            include: [Profile, User]}
+        )
         .then (data => {
-            res.render ('myprofile',{data})
+            // res.send(data)
+            res.render ('myprofile',{data, formNumber})
         })
         .catch (err => {
             res.send (err)
@@ -84,11 +85,35 @@ class ProfileController {
     }
 
     static getAssign(req,res){
-        res.render(`assign`)
+        let dataProfile 
+        Profile.findByPk(+req.params.id)
+        .then ((data)=>{
+            dataProfile = data
+            return User.findAll() 
+        })
+        .then((dataUser)=>{
+            res.render(`assign`, {dataProfile, dataUser})
+        })
+        .catch (err => {
+            res.send (err)
+        })
+        
     }
 
     static postAsign(req,res){
-
+        let obj = {
+            UserId : req.body.UserId,
+            ProfileId : req.params.id,
+            status : req.body.status
+        }
+        UserProfile.create(obj)
+        .then ((data)=>{
+            
+            res.redirect(`/profiles`)
+        })
+        .catch (err => {
+            res.send (err)
+        })
     }
 }
 
