@@ -13,20 +13,21 @@ class UserController {
                 password : req.body.password
             }
         })
+        // console.log(req.body)
         .then(data=>{
-            if(data === null){
-                res.redirect('/?err=true')
+            
+            if(!data){
+                throw "username or password wrong"
             }else{
-                req.session.isLoggedIn = true
+                req.session.isLogin = true
                 req.session.username = data.username
-                req.session.role = data.isAdmin
-                console.log(req.session.role)
-            }
-
-            if(req.session.role === false){
-                res.redirect(`/profiles/myprofile?user=${req.session.username}&profile=${req.session.profileid}`)
-            }else{
-                res.redirect('/profiles')
+                if (data.isAdmin == true){
+                    req.session.isAdmin = true
+                }
+                if (data.isCeo == true){
+                    req.session.isCeo = true
+                }
+                res.redirect(`/profiles`)
             }
         })
         .catch(err=>{

@@ -1,10 +1,11 @@
 const express = require('express')
 const routers = express.Router()
-
+const authenticate = require (`../middlewares/authenticate`)
 const ProfileController = require('../controllers/profileCont.js')
 
-routers.get('/' , ProfileController.listProfile)
 
+routers.use(authenticate)
+routers.get('/' , ProfileController.listProfile)
 routers.get('/add' , ProfileController.getAddProfile)
 routers.post('/add' , ProfileController.postAddProfile)
 routers.get('/:id/edit' , ProfileController.getEditProfile)
