@@ -1,11 +1,12 @@
 const { Profile,User } = require ('../models/index.js')
+const formNumber = require ('../helper/formatNumber')
 
 class ProfileController {
 
     static listProfile(req,res){
         Profile.findAll ()
         .then (data => {
-            res.render ('profile',{data})
+            res.render ('profile',{data,formNumber})
         })
         .catch (err => {
             res.send (err)
