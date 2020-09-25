@@ -34,7 +34,9 @@
                     <td><%= el.klien %></td>
                     <td><%= el.estimasiProject %></td>
                     <td><a href="/profiles/<%= el.id %>/edit">Edit</a>
-                    <a href="/profiles/<%= el.id %>/assign">Assign</a></td>
+                    <a href="/profiles/<%= el.id %>/assign">Assign</a>
+                    <a href="/profiles/<%= el.id %>/delete">Delete</a>
+                </td>
                 </tr>
             <% }) %>
         </table>

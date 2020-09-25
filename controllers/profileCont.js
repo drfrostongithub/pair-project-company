@@ -115,6 +115,16 @@ class ProfileController {
             res.send (err)
         })
     }
+
+    static deleteProfile(req,res){
+        Profile.destroy(+req.params.id)
+        .then((data)=>{
+            res.redirect(`/profiles`)
+        })
+        .catch (err => {
+            res.send (err)
+        })
+    }
 }
 
 module.exports = ProfileController

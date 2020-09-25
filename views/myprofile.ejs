@@ -23,8 +23,8 @@
                 <th>Client</th>
                 <th>Estimate Project</th>
             </tr>
+            <% data.forEach((el)=>{ %> 
             <tr> 
-            <% data.forEach((el)=>{ %>
                 <td><%= el.Profile.fullName %></td>
                 <td><%= el.Profile.position %></td>
                 <td> Rp.<%= formNumber(el.Profile.salary) %></td>
