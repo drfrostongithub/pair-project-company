@@ -72,7 +72,7 @@ class ProfileController {
     }
 
     static myProfile(req,res){
-        UserProfile.findAll ({where : {id : +req.params.id},
+        UserProfile.findAll ({where : {ProfileId : +req.params.id},
             include: [Profile, User]}
         )
         .then (data => {
